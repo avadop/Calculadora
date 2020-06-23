@@ -115,4 +115,6 @@ function addHistorial (){
 
 function emptyHistory() {
   contenedorHistorico.innerHTML = '';
+
+  historico = []
 }
