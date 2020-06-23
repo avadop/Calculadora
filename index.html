@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+  <title>Calculadora</title>
+</head>
+<body>
+  <div class="rounded-borders" id="calculadora">
+    <div id="operaciones">
+      <span id="pantalla">0</span>
+    </div>
+    <div id="botones">
+      <button onclick="clickBoton(1)">1</button>
+      <button onclick="clickBoton(2)">2</button>
+      <button onclick="clickBoton(3)">3</button>
+      <button onclick="clickBoton('+')">+</button>
+      <button onclick="clickBoton(4)">4</button>
+      <button onclick="clickBoton(5)">5</button>
+      <button onclick="clickBoton(6)">6</button>
+      <button onclick="clickBoton('-')">-</button>
+      <button onclick="clickBoton(7)">7</button>
+      <button onclick="clickBoton(8)">8</button>
+      <button onclick="clickBoton(9)">9</button>
+      <button onclick="clickBoton('*')">*</button>
+      <button onclick="clickBoton(0)">0</button>
+      <button onclick="clickBoton('.')">.</button>
+      <button onclick="clickBoton('C')">C</button>
+      <button onclick="clickBoton('=')">=</button>
+    </div>
+  </div>
+
+  <div class="rounded-borders" id="historico-container">
+    <h3>Historico de operaciones</h3>
+    <div id="historico"></div>
+    <button id="vaciar" onclick="emptyHistory()">Vaciar</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
