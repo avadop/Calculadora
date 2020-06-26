@@ -57,6 +57,17 @@ body > div {
   justify-content: center;
 }
 
+@media(max-width: 811px){
+  #historico-container {
+    margin-left: 1em;
+  }
+  body {
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0em;
+  }
+}
+
 #historico-container > h3 {
   margin-bottom: 0;
   padding-right: 2em;
@@ -103,3 +114,5 @@ button:hover {
 button:focus {
   outline: none;
 }
+
+
