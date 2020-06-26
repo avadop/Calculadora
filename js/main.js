@@ -48,7 +48,7 @@ function addHistorial (){
   p.innerHTML = historico.length + ') &nbsp; &nbsp;' + historico[historico.length -1];
 
   contenedorHistorico.appendChild(p);
- }
+}
 
 function emptyHistory() {
   contenedorHistorico.innerHTML = '';
