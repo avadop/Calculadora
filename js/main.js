@@ -6,46 +6,79 @@ let operacion = '';
 
 let resultado = '';
 
+const botones = document.getElementsByClassName("operando");
+
+const dot = document.getElementById("dot");
+
+function disableOperations() {
+  for (let boton of botones) {
+    boton.disabled = true
+  }
+}
+
+function enableOperations() {
+  for (let boton of botones) {
+    boton.disabled = false
+  }
+}
+
+function enableDot() {
+  console.log(dot)
+  dot.disabled = false;
+}
+
+function disableDot() {
+  dot.disabled = true;
+}
+
 const pantalla = document.getElementById('pantalla');
 
 function clickBoton(value) {
 
-  switch (value) {
-    case '=':
-      resultado = eval(operacion);
+  if (value === '=') {
+    resultado = eval(operacion);
 
-      historico.push(historialItem + ' = ' + resultado);
-      addHistorial();
+    historico.push(historialItem + ' = ' + resultado);
+    addHistorial();
 
-      historialItem = '';
+    disableOperations();
+    enableDot()
 
-      operacion = '';
-      break;
+    historialItem = '';
+    operacion = '';
 
-    case 'C':
-      resultado = '0';
-      operacion = '';
-      historialItem = '';
-      break;
+  } else if (value === 'C') {
+    resultado = '0';
+    operacion = '';
+    historialItem = '';
 
-    default:
-      resultado = '';
-      operacion += value;
-      historialItem += value;
-      break;
+    disableOperations();
+
+  } else {
+
+    if (value === ' + ' || value === ' - ' || value === ' * ') {
+      enableDot();
+      disableOperations();
+    } else if (value === '.') disableDot();
+    else enableOperations();
+
+    resultado = '';
+    operacion += value;
+    historialItem += value;
   }
-  if(resultado === '') pantalla.innerText = historialItem;
+
+  if (resultado === '') pantalla.innerText = historialItem;
   else pantalla.innerText = resultado;
-  
+
 }
 
 const contenedorHistorico = document.getElementById('historico')
 
-function addHistorial (){
+function addHistorial() {
 
   const p = document.createElement("p");
 
-  p.innerHTML = historico.length + ') &nbsp; &nbsp;' + historico[historico.length -1];
+  p.innerHTML = historico.length + ') &nbsp; &nbsp;' + historico[historico.length - 1];
 
   contenedorHistorico.appendChild(p);
 }
