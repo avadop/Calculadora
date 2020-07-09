@@ -22,17 +22,17 @@ function disableOperations(): void {
   }
 }
 
-function enableOperations() {
+function enableOperations(): void {
   for (let i = 0; i < botones.length; i++) {
     botones[i].disabled = false
   }
 }
 
-function enableDot() {
+function enableDot(): void {
   dot.disabled = false;
 }
 
-function disableDot() {
+function disableDot(): void {
   dot.disabled = true;
 }
 
